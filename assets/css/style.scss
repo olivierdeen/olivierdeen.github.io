@@ -11,6 +11,7 @@
   background-color: #333;
   padding: 10px 0;
   font-family: Arial, sans-serif;
+  position: relative;
 }
 
 .navbar-links {
@@ -90,11 +91,45 @@
 }
 
 // Poetry Grid Layout
-.poetry-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 1.5rem;
-  margin: 2rem 0;
+.poetry {
+  &-styles {
+    margin: 2rem 0;
+    padding: 1.5rem;
+    background: var(--poetry-tile-bg);
+    border-radius: 8px;
+
+    h2 {
+      margin-bottom: 1rem;
+      font-size: 1.4rem;
+      color: var(--text-color);
+    }
+
+    ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    li {
+      margin-bottom: 1rem;
+      color: var(--text-color);
+      
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    strong {
+      color: var(--link-color);
+    }
+  }
+
+  &-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 1.5rem;  // Added left and right margin to match styles padding
+  }
 }
 
 .poetry-tile {
@@ -150,5 +185,172 @@ body {
 
 .site-footer {
   flex-shrink: 0;
+}
+
+.poetry {
+  &-styles {
+    margin: 2rem 0;
+    padding: 1.5rem;
+    background: var(--poetry-tile-bg);
+    border-radius: 8px;
+
+    h2 {
+      margin-bottom: 1rem;
+      font-size: 1.4rem;
+      color: var(--text-color);
+    }
+
+    ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    li {
+      margin-bottom: 1rem;
+      color: var(--text-color);
+      
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    strong {
+      color: var(--link-color);
+    }
+  }
+}
+
+// Dark mode variables
+:root {
+  --background-color: #ffffff;
+  --text-color: #24292e;
+  --link-color: #2a7ae2;
+  --poetry-tile-bg: #f8f9fa;
+  --poetry-tile-shadow: rgba(0,0,0,0.1);
+  --muted-text-color: #666;
+}
+
+[data-theme="dark"] {
+  --background-color: #1a1a1a;
+  --text-color: #ffffff;
+  --link-color: #58a6ff;
+  --poetry-tile-bg: #2d2d2d;
+  --poetry-tile-shadow: rgba(0,0,0,0.3);
+  --muted-text-color: #999;
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+// Theme toggle button
+.theme-toggle {
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: white;
+  padding: 0.5rem;
+  z-index: 10;
+}
+
+.sun-icon {
+  display: none;
+}
+
+[data-theme="dark"] {
+  .sun-icon {
+    display: block;
+  }
+  .moon-icon {
+    display: none;
+  }
+}
+
+// Adjust spacing for the last navigation item
+.navbar-links li:last-child {
+  margin-right: 4rem;
+}
+
+// Responsive adjustment
+@media (max-width: 768px) {
+  .theme-toggle {
+    top: 1rem;
+    transform: none;
+  }
+  
+  .navbar-links li:last-child {
+    margin-right: 0;
+  }
+}
+
+// Update existing poetry styles to use CSS variables
+.poetry {
+  &-tile {
+    background: var(--poetry-tile-bg);
+    
+    &:hover {
+      box-shadow: 0 4px 8px var(--poetry-tile-shadow);
+    }
+  }
+  
+  &-tile-title {
+    color: var(--link-color);
+  }
+}
+
+// Poetry styles
+.poetry {
+  &-section {
+    // Section specific styles
+  }
+
+  &-header {
+    margin-bottom: 2rem;
+  }
+
+  &-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 1.5rem;
+  }
+
+  &-tile {
+    background: var(--poetry-tile-bg);
+    border-radius: 8px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+    &:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 4px 8px var(--poetry-tile-shadow);
+    }
+
+    &-link {
+      display: block;
+      padding: 1.5rem;
+      text-decoration: none;
+      color: var(--text-color);
+      height: 100%;
+    }
+
+    &-title {
+      margin: 0 0 0.5rem 0;
+      font-size: 1.2rem;
+      color: var(--link-color);
+    }
+
+    &-date {
+      display: block;
+      font-size: 0.9rem;
+      color: var(--muted-text-color);
+      font-style: italic;
+    }
+  }
 }
 
