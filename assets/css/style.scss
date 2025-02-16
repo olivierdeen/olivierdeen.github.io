@@ -46,3 +46,42 @@
   }
 }
 
+/* Example Styles for Poems */
+.poem {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.poem header h2 {
+  font-size: 2rem;
+  text-align: center;
+  font-family: 'Georgia', serif;
+  color: #333;
+}
+
+.poem-content {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  text-align: justify;
+  margin-top: 1rem;
+  color: #555;
+}
+
+.poem-content p {
+  margin-bottom: 1.5rem;
+}
+
+/* Optional: Add italics for certain poetic lines */
+.poem-content em {
+  font-style: italic;
+  color: #888;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .poem {
+    padding: 1rem;
+  }
+}
+
