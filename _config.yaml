@@ -1,3 +1,6 @@
 title: My GitHub Pages Site
 theme: minima  # Or another Jekyll theme
+collections:
+  poetry:
+    output: true
 
