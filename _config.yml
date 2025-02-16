@@ -1,6 +1,5 @@
 title: My GitHub Pages Site
+description: A simple website.
 theme: minima  # Or another Jekyll theme
-collections:
-  poetry:
-    output: true
-
+sass:
+  style: compressed
