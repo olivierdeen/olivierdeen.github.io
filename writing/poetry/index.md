@@ -3,12 +3,24 @@ layout: page
 title: Poetry
 ---
 
-# Poetry Section
-These my attempts at poems
+<div class="poetry-section">
+  <header class="poetry-header">
+    <p class="poetry-intro">These are my attempts at poems — explorations in verse and rhythm.</p>
+  </header>
 
-# Poetry Collection
+  <div class="poetry-grid">
+    {% for post in site.categories.poetry %}
+      <article class="poetry-tile">
+        <a href="{{ post.url }}" class="poetry-tile-link">
+          <h2 class="poetry-tile-title">{{ post.title }}</h2>
+          <time class="poetry-tile-date" datetime="{{ post.date | date_to_xmlschema }}">
+            {{ post.date | date: "%B %d, %Y" }}
+          </time>
+        </a>
+      </article>
+    {% endfor %}
+  </div>
+</div>
 
-{% for post in site.categories.poetry %}
-- [{{ post.title }}]({{ post.url }}) - {{ post.date | date: "%B %d, %Y" }}
-{% endfor %}
+
 

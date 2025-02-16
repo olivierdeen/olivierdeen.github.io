@@ -89,3 +89,66 @@
   }
 }
 
+// Poetry Grid Layout
+.poetry-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+.poetry-tile {
+  background: #f8f9fa;
+  border-radius: 8px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  }
+}
+
+.poetry-tile-link {
+  display: block;
+  padding: 1.5rem;
+  text-decoration: none;
+  color: inherit;
+  height: 100%;
+}
+
+.poetry-tile-title {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.2rem;
+  color: #2a7ae2;
+}
+
+.poetry-tile-date {
+  display: block;
+  font-size: 0.9rem;
+  color: #666;
+  font-style: italic;
+}
+
+// Responsive adjustments
+@media (max-width: 600px) {
+  .poetry-grid {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1rem;
+  }
+}
+
+// Sticky Footer Layout
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.page-content {
+  flex: 1 0 auto;
+}
+
+.site-footer {
+  flex-shrink: 0;
+}
+
