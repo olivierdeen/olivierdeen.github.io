@@ -1,31 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ page.title }}</title>
+    <title>{{ site.title }}</title>
     <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
-</head>
-<body>
-
-<header>
-    <nav>
-        <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="/writing/">Writing</a></li>
-            <li><a href="/sports/">Sports</a></li>
-        </ul>
+  </head>
+  <body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+      <ul class="navbar-links">
+        <li><a href="{{ '/' | relative_url }}">Home</a></li>
+        <li><a href="{{ '/writing' | relative_url }}">Writing</a></li>
+        <li><a href="{{ '/writing/poetry' | relative_url }}">Poetry</a></li>
+        <li><a href="{{ '/sports' | relative_url }}">Sports</a></li>
+      </ul>
     </nav>
-</header>
 
-<main>
-    {{ content }}
-</main>
+    <!-- Main Content -->
+    <div class="content">
+      {{ content }}
+    </div>
 
-<footer>
-    <p>&copy; 2025 My Jekyll Site</p>
-</footer>
-
-</body>
+    <footer>
+      <p>© {{ site.time | date: "%Y" }} {{ site.title }}. All rights reserved.</p>
+    </footer>
+  </body>
 </html>
 

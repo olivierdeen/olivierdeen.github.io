@@ -4,3 +4,45 @@
 
 @import "minima";
 
+/* assets/css/style.scss */
+
+/* Basic reset for the navbar */
+.navbar {
+  background-color: #333;
+  padding: 10px 0;
+  font-family: Arial, sans-serif;
+}
+
+.navbar-links {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+.navbar-links li {
+  display: inline;
+  margin: 0 20px;
+}
+
+.navbar-links a {
+  text-decoration: none;
+  color: white;
+  font-size: 18px;
+  padding: 10px 15px;
+  transition: background-color 0.3s;
+}
+
+.navbar-links a:hover {
+  background-color: #555;
+  border-radius: 5px;
+}
+
+/* Optional: For mobile responsiveness */
+@media (max-width: 768px) {
+  .navbar-links li {
+    display: block;
+    margin: 10px 0;
+  }
+}
+
