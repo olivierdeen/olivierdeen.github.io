@@ -1,0 +1,12 @@
+---
+layout: default
+---
+
+<article class="thought-container">
+  <h2 class="thought-title">{{ page.title }}</h2>
+  <p class="thought-meta">{{ page.date | date: "%B %d, %Y" }}</p>
+
+  <div class="thought-content">
+    {{ content }}
+  </div>
+</article>
